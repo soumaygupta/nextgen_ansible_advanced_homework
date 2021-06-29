@@ -1,2 +1,11 @@
 # Create instances for 3 tier application
 - name: Instance Creation.
+  os_server:
+    name: "{{ item.value.name }}"
+    state: "{{ item.value.state }}"
+    image: "{{ item.value.image }}"
+    key_name: "{{ ansible_ssh }}"
+    flavor: "{{ item.value.flavor }}"
+    security_groups: "{{ item.value.security_group }}"
+    meta: "{{ item.value.meta }}"
+  with_dict: "{{ osp_servers }}"
