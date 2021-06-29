@@ -1,6 +1,9 @@
 # Create instances for 3 tier application
 - name: Instance Creation.
   os_server:
+    auth:
+      auth_url: https://dynamic-labconsole.apps.shared.na.openshift.opentlc.com
+      username: soumay.g-hcl.com
     name: "{{ item.value.name }}"
     state: "{{ item.value.state }}"
     image: "{{ item.value.image }}"
@@ -14,3 +17,4 @@
       curl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
       cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
   with_dict: "{{ osp_servers }}"
+

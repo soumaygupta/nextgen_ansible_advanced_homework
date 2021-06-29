@@ -2,7 +2,7 @@
 
 # tasks file for osp.servers
 
-- include_tasks: network.yml
-- include_tasks: router.yml
-- include_tasks: securitygroup.yml
+#- include_tasks: network.yml
+#- include_tasks: router.yml
+#- include_tasks: securitygroup.yml
 - include_tasks: instances.yml 

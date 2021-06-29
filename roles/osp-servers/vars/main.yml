@@ -116,4 +116,3 @@ osp_flavour:
   disk: 20
 
 # Key Pair Details
-key_name: ansible_ssh
