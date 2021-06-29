@@ -1,0 +1,7 @@
+---
+
+# Internal Network Creation
+- name: Create Internal Network
+  os_network:
+    cloud: "{{ cloud }}"
+    
