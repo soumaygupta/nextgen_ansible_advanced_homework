@@ -7,7 +7,7 @@
     state: present
     name: "{{ item.value.name }}"
     external: "{{ item.value.external }}"
-    admin_state_up: "{{ item.value.admin_state_up }" 
+    admin_state_up: "{{ item.value.admin_state_up }}" 
     provider_network_type: "{{ item.value.provider_network_type }}"
     provider_physical_network: "{{ item.value.provider_physical_network }}"
   with_dict: "{{ osp_networks }}"
