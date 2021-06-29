@@ -27,4 +27,4 @@
     allocation_pool_end: "{{ item.value.allocation_pool_end }}"
     dns_nameservers: 
       - 8.8.8.8
-
+  with_dict: "{{ osp_subnets }}"
