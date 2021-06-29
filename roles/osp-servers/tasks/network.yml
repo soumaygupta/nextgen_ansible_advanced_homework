@@ -3,5 +3,9 @@
 # Internal Network Creation
 - name: Create Internal Network
   os_network:
-    cloud: "{{ cloud }}"
+    cloud: "{{ item.value.cloud }}"
+    state: present
+    name: "{{ item.value.int_network }}"
+    external: "{{ item.value.external }}"
+    admin_state_up: "{{ item.value.admin_state_up }" 
     
