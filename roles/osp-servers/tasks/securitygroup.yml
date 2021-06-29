@@ -4,7 +4,7 @@
     cloud: "{{ item.value.cloud }}"
     name: "{{ item.value.security_group }}" 
     state: present
-  with_dict: "{{ osp_router }}"
+  with_dict: "{{ osp_securitygroup }}"
 
 # Add rules to previvously created security groups
 - name: Adding rules for the required instances.
@@ -18,5 +18,4 @@
   with_items:
     - { port: '8080', protocol: '0.0.0.0/0' }
     - { port: '22', protocol: 'tcp' }
-  with_dict: "{{ osp_router }}"
 
