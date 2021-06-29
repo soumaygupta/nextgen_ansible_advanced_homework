@@ -84,4 +84,44 @@ osp_subnets:
     allocation_pool_start: 192.0.2.150
     allocation_pool_end: 192.0.2.200
 
+# Router Details
+osp_router:
+  cloud: openstack
+  name: router
+  network: ext_network
+  interfaces: int_subnet
 
+# Security Group & Rules
+osp_securitygroup:
+  #Rules for apps instances
+  apps:
+    security_group: apps
+    port1: 22/tcp
+    port2: 8080/tcp
+    remote_ip_prefix: 0.0.0.0/0
+  
+  # Rules for frontend instance
+  frontend:
+    security_group: frontend
+    port1: 22/tcp
+    port2: 80/tcp
+    port3: 443/tcp
+    remote_ip_prefix: 0.0.0.0/0
+
+  # Rules for db instances
+  db:
+    security_group: db
+    port1: 22/tcp
+    port2: 5432/tcp
+    remote_ip_prefix: 0.0.0.0/0
+
+# Flavour Details
+osp_flavour:
+  cloud: openstack
+  size: m1.medium
+  ram: 2048
+  vcpus: 1
+  disk: 20
+
+# Key Pair Details
+key_name: ansible_ssh
