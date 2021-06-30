@@ -1,0 +1,21 @@
+# Create instances for 3 tier application
+- name: Create a server instance
+  os_server:
+    cloud: openstack
+    name: frontend
+    image: rhel-8.1
+    meta: group=frontends,deployment_name=dev
+    state: present
+    flavor: m1.medium
+    security_groups: frontend_servers 
+    key_name: ansible_ssh
+    wait: yes
+    nics:
+    - net-name: int_network
+   # userdata: |
+   #   #!/bin/bash
+   #   curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
+   #   cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
+   #   curl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
+   #   cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
+  register: instanceip
