@@ -4,6 +4,7 @@ osp_servers:
   frontend:
     name: frontend
     state: present
+    cloud: openstack
     image: rhel-guest
     key_name: ansible_ssh
     flavor: m1.medium
@@ -14,6 +15,7 @@ osp_servers:
     name: app1
     state: present
     image: rhel-guest
+    cloud: openstack
     key_name: ansible_ssh
     flavor: m1.medium
     security_group: apps
@@ -23,6 +25,7 @@ osp_servers:
     name: app2
     state: present
     image: rhel-guest
+    cloud: openstack
     key_name: ansible_ssh
     flavor: m1.medium
     security_group: apps
@@ -31,6 +34,7 @@ osp_servers:
   db:
     name: db
     state: present
+    cloud: openstack
     image: rhel-guest
     key_name: ansible_ssh
     flavor: m1.medium
