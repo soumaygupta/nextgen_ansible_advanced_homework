@@ -48,19 +48,11 @@ osp_networks:
   internal:
     cloud: openstack
     name: int_network
-    external: false
-    admin_state_up: yes
-    provider_network_type: null
-    provider_physical_network: null
 
   # External Network Details
   external:
     cloud: openstack
     name: ext_network
-    external: true
-    admin_state_up: false
-    provider_network_type: flat
-    provider_physical_network: datacenter
 
 # Subnet Values
 osp_subnets:
@@ -68,30 +60,15 @@ osp_subnets:
   internal:
     cloud: openstack
     name: int_subnet
-    network_name: int_network
-    cidr: 172.16.0.0/24
-    ip_version: 4
-    gateway_ip: null
-    enable_dhcp: yes
-    allocation_pool_start: null
-    allocation_pool_end: null
     
 # External Subnet Details
   external:
     cloud: openstack
     name: ext_subnet
-    network_name: ext_network
-    cidr: 192.0.2.0/24
-    ip_version: 4
-    gateway_ip: 192.0.2.254
-    enable_dhcp: no
-    allocation_pool_start: 192.0.2.150
-    allocation_pool_end: 192.0.2.200
 
 # Router Details
 osp_router_cloud: openstack
 osp_router_name: router
-osp_router_network: ext_network
 
 # Security Group & Rules
 osp_securitygroup:
