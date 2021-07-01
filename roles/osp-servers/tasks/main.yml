@@ -6,4 +6,3 @@
 - include_tasks: router.yml
 - include_tasks: securitygroup.yml
 - include_tasks: instances.yml 
-#- include_tasks: instances_test.yml

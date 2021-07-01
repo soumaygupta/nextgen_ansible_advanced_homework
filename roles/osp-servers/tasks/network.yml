@@ -10,6 +10,7 @@
     admin_state_up: "{{ item.value.admin_state_up }}" 
     provider_network_type: "{{ item.value.provider_network_type }}"
     provider_physical_network: "{{ item.value.provider_physical_network }}"
+    wait: yes
   with_dict: "{{ osp_networks }}"
 
 # Create Internal & External Subnet
@@ -25,6 +26,7 @@
     enable_dhcp: "{{ item.value.enable_dhcp }}"
     allocation_pool_start: "{{ item.value.allocation_pool_start }}"
     allocation_pool_end: "{{ item.value.allocation_pool_end }}"
+    wait: yes
     dns_nameservers: 
       - 8.8.8.8
   with_dict: "{{ osp_subnets }}"

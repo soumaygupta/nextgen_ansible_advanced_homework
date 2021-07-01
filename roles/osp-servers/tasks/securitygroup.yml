@@ -22,7 +22,7 @@
 - name: Adding rules for the frontend instance.
   os_security_group_rule:
     cloud: openstack
-    security_group: apps
+    security_group: frontend
     port_range_min: "{{ item.port }}"
     port_range_max: "{{ item.port }}"
     protocol: "{{ item.protocol }}"
@@ -35,7 +35,7 @@
 - name: Adding rules for the db instance.
   os_security_group_rule:
     cloud: openstack
-    security_group: apps
+    security_group: db
     port_range_min: "{{ item.port }}"
     port_range_max: "{{ item.port }}"
     protocol: "{{ item.protocol }}"

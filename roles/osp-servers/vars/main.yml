@@ -45,6 +45,16 @@ osp_servers:
 # Network Values
 osp_networks:
   # Internal Network Details
+
+  # External Network Details
+  external:
+    cloud: openstack
+    name: ext_network
+    external: true
+    admin_state_up: no
+    provider_network_type: flat
+    provider_physical_network: datacenter
+
   internal:
     cloud: openstack
     name: int_network
@@ -53,14 +63,6 @@ osp_networks:
     provider_network_type: null
     provider_physical_network: null
 
-  # External Network Details
-  external:
-    cloud: openstack
-    name: ext_network
-    external: true
-    admin_state_up: false
-    provider_network_type: flat
-    provider_physical_network: datacenter
 
 # Subnet Values
 osp_subnets:
