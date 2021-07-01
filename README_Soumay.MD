@@ -21,6 +21,6 @@
 
 __Edited two roles and one playbook for achieving the same.__
 
-_1. site-smoke-osp.yml - For smoke testing the functionality of the playbook_
-_2. Role - osp-servers - To generate the required infra for testing_
-_3. Role - osp-instance-delete & site-osp-delete.yaml - To delete the generated infra after achieving the desired task._
+1. site-smoke-osp.yml - For smoke testing the functionality of the playbook
+2. Role - osp-servers - To generate the required infra for testing
+3. Role - osp-instance-delete & site-osp-delete.yaml - To delete the generated infra after achieving the desired task.
