@@ -1,8 +1,8 @@
-=================================================
-Ansible Training Homework
 
--------------------------------------------------
-Initial steps for setting up the lab
+## Ansible Training Homework ##
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### Initial steps for setting up the lab ###
 
 1. Setup environment variables in a file for Ansible & Lab utilization.
 2. Created inventory for tower setup.
@@ -14,15 +14,26 @@ Initial steps for setting up the lab
 8. Resolved error in  Job template for OSP Instances
 9. Created a project in ansible tower for job_template task 
 
---------------------------------------------------------------
-Playbook Creation for LAB
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### Heading 4 ###
-Edited two roles and one playbook for achieving the same.
+### Playbook Creation for LAB ###
 
-1. site-smoke-osp.yml - For smoke testing the functionality of the playbook
-2. Role - osp-servers - To generate the required infra for testing
-3. osp-instance-delete - To delete the generated infra after achieving the desired task.
 
-*Variables Utilized*
-Playbook Name - 
+__Edited two roles and one playbook for achieving the same.__
+
+_1. site-smoke-osp.yml - For smoke testing the functionality of the playbook_
+_2. Role - osp-servers - To generate the required infra for testing_
+_3. osp-instance-delete - To delete the generated infra after achieving the desired task._
+
+**Variables Utilized**
+Playbook Name - site-osp-instances.yml
+Role Name - osp-servers
+
+Network   | External 
+--------    --------
+    cloud |openstack
+    name  |ext_network
+  external|true
+admin_state_up: no
+    provider_network_type: flat
+    provider_physical_network: datacenter
