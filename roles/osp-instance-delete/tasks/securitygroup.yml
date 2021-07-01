@@ -1,0 +1,52 @@
+# Configure Security Groups for different applications based on their requirements.
+- name: Create Security Groups
+  os_security_group: 
+    cloud: "{{ item.value.cloud }}"
+    name: "{{ item.value.security_group }}" 
+    state: absent
+  with_dict: "{{ osp_securitygroup }}"
+
+# Add rules to previvously created security groups
+- name: Adding rules for the app instance.
+  os_security_group_rule:
+    cloud: openstack
+    satte: absent
+    security_group: apps
+    port_range_min: "{{ item.port }}"
+    port_range_max: "{{ item.port }}"
+    protocol: "{{ item.protocol }}"
+    remote_ip_prefix: "{{ remote_ip_prefix }}"
+  with_items:
+    - { port: '8080', protocol: 'tcp' }
+    - { port: '22', protocol: 'tcp' }
+
+- name: Adding rules for the frontend instance.
+  os_security_group_rule:
+    cloud: openstack
+    state: absent
+    security_group: apps
+    port_range_min: "{{ item.port }}"
+    port_range_max: "{{ item.port }}"
+    protocol: "{{ item.protocol }}"
+    remote_ip_prefix: "{{ remote_ip_prefix }}"
+  with_items:
+    - { port: '80', protocol: 'tcp' }
+    - { port: '22', protocol: 'tcp' }
+    - { port: '443', protocol: 'tcp' }
+
+- name: Adding rules for the db instance.
+  os_security_group_rule:
+    cloud: openstack
+    state: absent
+    security_group: apps
+    port_range_min: "{{ item.port }}"
+    port_range_max: "{{ item.port }}"
+    protocol: "{{ item.protocol }}"
+    remote_ip_prefix: "{{ remote_ip_prefix }}"
+  with_items:
+    - { port: '5432', protocol: 'tcp' }
+    - { port: '22', protocol: 'tcp' }
+
+
+
+

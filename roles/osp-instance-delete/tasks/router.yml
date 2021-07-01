@@ -1,0 +1,10 @@
+---
+# Create Router for 3 tier app
+- name: Router Configuration
+  os_router: 
+    cloud: "{{ osp_router_cloud }}"
+    state: absent
+    name: "{{ osp_router_name }}"
+    network: "{{ osp_router_network }}"
+    interfaces: 
+    - int_subnet
