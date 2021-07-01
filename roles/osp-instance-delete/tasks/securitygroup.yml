@@ -1,5 +1,5 @@
-# Configure Security Groups for different applications based on their requirements.
-- name: Create Security Groups
+# Delete Security Groups for different applications
+- name: Delete Security Groups
   os_security_group: 
     cloud: "{{ item.value.cloud }}"
     name: "{{ item.value.security_group }}" 

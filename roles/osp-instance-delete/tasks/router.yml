@@ -1,6 +1,6 @@
 ---
-# Create Router for 3 tier app
-- name: Router Configuration
+# Delete Router for 3 tier app
+- name: Delete Router Configuration
   os_router: 
     cloud: "{{ osp_router_cloud }}"
     state: absent

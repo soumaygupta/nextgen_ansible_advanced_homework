@@ -5,42 +5,19 @@ osp_servers:
     name: frontend
     state: absent
     cloud: openstack
-    image: rhel-guest
-    key_name: ansible_ssh
-    flavor: m1.medium
-    security_group: frontend
-    meta:
-      - { group: frontends, deployment_name: QA}
+  
   app1:
     name: app1
     state: absent
-    image: rhel-guest
     cloud: openstack
-    key_name: ansible_ssh
-    flavor: m1.medium
-    security_group: apps
-    meta:
-      - { group: apps, deployment_name: QA}
   app2:
     name: app2
     state: absent
-    image: rhel-guest
     cloud: openstack
-    key_name: ansible_ssh
-    flavor: m1.medium
-    security_group: apps
-    meta:
-      - { group: apps, deployment_name: QA}
   db:
     name: db
     state: absent
     cloud: openstack
-    image: rhel-guest
-    key_name: ansible_ssh
-    flavor: m1.medium
-    security_group: db
-    meta:
-      - { group: appdbs, deployment_name: QA}
 
 # Network Values
 osp_networks:

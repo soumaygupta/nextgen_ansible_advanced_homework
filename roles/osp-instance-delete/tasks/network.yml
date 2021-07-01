@@ -1,14 +1,14 @@
 ---
 
-# Internal Network Creation
-- name: Create Internal & External Network
+# Internal Network Deletion
+- name: Delete Internal & External Network
   os_network:
     cloud: "{{ item.value.cloud }}"
     state: absent
     name: "{{ item.value.name }}"
   with_dict: "{{ osp_networks }}"
-# Create Internal & External Subnet
-- name: Create Internal & External Subnet
+# Delete Internal & External Subnet
+- name: Delete Internal & External Subnet
   os_subnet: 
     cloud: "{{ item.value.cloud }}"
     state: absent
