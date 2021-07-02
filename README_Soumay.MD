@@ -150,3 +150,55 @@ osp_flavour:
   vcpus: 1
   disk: 20
 ```
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+***Playbook - site-osp-delete.yml & Role - osp-instance-delete***
+**Variables Utilized**
+```
+*Server Details*
+osp_servers:
+  frontend:
+    name: frontend
+    state: absent
+    cloud: openstack
+  
+  app1:
+    name: app1
+    state: absent
+    cloud: openstack
+  app2:
+    name: app2
+    state: absent
+    cloud: openstack
+  db:
+    name: db
+    state: absent
+    cloud: openstack
+
+*Network Values*
+osp_networks:
+*Internal Network Details*
+  internal:
+    cloud: openstack
+    name: int_network
+
+*External Network Details*
+  external:
+    cloud: openstack
+    name: ext_network
+
+*Subnet Values*
+osp_subnets:
+*Internal Subnet Details*
+  internal:
+    cloud: openstack
+    name: int_subnet
+    
+*External Subnet Details*
+  external:
+    cloud: openstack
+    name: ext_subnet
+
+*Router Details*
+osp_router_cloud: openstack
+osp_router_name: router
+```
