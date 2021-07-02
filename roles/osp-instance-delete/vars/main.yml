@@ -47,30 +47,3 @@ osp_subnets:
 osp_router_cloud: openstack
 osp_router_name: router
 
-# Security Group & Rules
-osp_securitygroup:
-  #Rules for apps instances
-  apps:
-    security_group: apps
-    cloud: openstack
-  
-  # Rules for frontend instance
-  frontend:
-    security_group: frontend
-    cloud: openstack
-
-  # Rules for db instances
-  db:
-    security_group: db
-    cloud: openstack
-remote_ip_prefix: 0.0.0.0/0
-
-# Flavour Details
-osp_flavour:
-  cloud: openstack
-  size: m1.medium
-  ram: 2048
-  vcpus: 1
-  disk: 20
-
-# Key Pair Details
