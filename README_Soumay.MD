@@ -28,7 +28,9 @@ __Edited two roles and one playbook for achieving the same.__
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ***Playbook - site-osp-instances.yml & Role - osp-servers***
 **Variables Utilized**
->osp_servers:
+```
+*Server Details*
+osp_servers:
   frontend:
     name: frontend
     state: present
@@ -70,11 +72,10 @@ __Edited two roles and one playbook for achieving the same.__
     meta:
       - { group: appdbs, deployment_name: QA}
 
-# Network Values
+*Network Values*
 osp_networks:
-  # Internal Network Details
-
-  # External Network Details
+ 
+ *External Network Details*
   external:
     cloud: openstack
     name: ext_network
@@ -82,7 +83,7 @@ osp_networks:
     admin_state_up: no
     provider_network_type: flat
     provider_physical_network: datacenter
-
+*Internal Network Details*
   internal:
     cloud: openstack
     name: int_network
@@ -92,9 +93,9 @@ osp_networks:
     provider_physical_network: null
 
 
-# Subnet Values
+*Subnet Values*
 osp_subnets:
-  #Internal Subnet Details
+*Internal Subnet Details*
   internal:
     cloud: openstack
     name: int_subnet
@@ -106,7 +107,7 @@ osp_subnets:
     allocation_pool_start: null
     allocation_pool_end: null
     
-# External Subnet Details
+*External Subnet Details*
   external:
     cloud: openstack
     name: ext_subnet
@@ -118,33 +119,34 @@ osp_subnets:
     allocation_pool_start: 192.0.2.150
     allocation_pool_end: 192.0.2.200
 
-# Router Details
+*Router Details*
 osp_router_cloud: openstack
 osp_router_name: router
 osp_router_network: ext_network
 
-# Security Group & Rules
+*Security Group & Rules*
 osp_securitygroup:
   #Rules for apps instances
   apps:
     security_group: apps
     cloud: openstack
   
-  # Rules for frontend instance
+*Rules for frontend instance*
   frontend:
     security_group: frontend
     cloud: openstack
 
-  # Rules for db instances
+*Rules for db instances*
   db:
     security_group: db
     cloud: openstack
 remote_ip_prefix: 0.0.0.0/0
 
-# Flavour Details
+*Flavour Details*
 osp_flavour:
   cloud: openstack
   size: m1.medium
   ram: 2048
   vcpus: 1
   disk: 20
+```
